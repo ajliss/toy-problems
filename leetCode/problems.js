@@ -14,6 +14,7 @@ return [0, 1].
 @return {number[]}
  */
 
+// (near) exponential time, constant space
 let twoSum = (nums, target) => {
   for (let i = 0; i < nums.length; i++) {
     let currentTarget = target - nums[i]
@@ -26,3 +27,4 @@ let twoSum = (nums, target) => {
 
   return -1;
 };
+

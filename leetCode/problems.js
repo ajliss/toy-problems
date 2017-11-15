@@ -28,3 +28,15 @@ let twoSum = (nums, target) => {
   return -1;
 };
 
+// linear time, linear space
+let twoSum2 = (nums, target) => {
+  let refObj = {};
+  for (let i = 0; i < nums.length; i++) {
+    if (refObj[target - nums[i]]) {
+      return [refObj[target - nums[i]], i]
+    } else {
+      refObj[nums[i]] = i;
+    }
+  }
+  return -1;
+}

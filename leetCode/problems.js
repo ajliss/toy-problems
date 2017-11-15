@@ -32,7 +32,7 @@ let twoSum = (nums, target) => {
 let twoSum2 = (nums, target) => {
   let refObj = {};
   for (let i = 0; i < nums.length; i++) {
-    if (refObj[target - nums[i]]) {
+    if (refObj[target - nums[i]] > -1) {
       return [refObj[target - nums[i]], i]
     } else {
       refObj[nums[i]] = i;

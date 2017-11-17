@@ -66,5 +66,5 @@ const removeElement = (nums, val) => {
       i--;
     }
   }
-  return nums;
+  return nums.length;
 };

@@ -60,5 +60,11 @@ Your function should return length = 2, with the first two elements of nums bein
 
 
 const removeElement = (nums, val) => {
-  
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] === val) {
+      nums.splice(i, 1);
+      i--;
+    }
+  }
+  return nums;
 };

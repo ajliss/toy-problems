@@ -82,17 +82,22 @@ Given "pwwkew", the answer is "wke", with the length of 3. Note that the answer 
  * @return {number}
  */
 const lengthOfLongestSubstring = (s) => {
-  let substring = '';
-  let length = 0;
-  for (let idx in s) {
-    if (substring.includes(s[idx])) {
-      substring = '';
-    } else {
-      substring += s[idx];
-    }
-    if (substring.length > length) {
-      length = substring.length;
-    }
+  if (!s) {
+      return 0;
   }
+  let length = 1;
+  for (let i = 0; i < s.length; i++) {
+    let substring = s[i];
+    for (let j = i + 1; j < s.length; j++) {
+        if (substring.includes(s[j])) {
+          j += s.length;
+        } else {
+          substring += s[j];
+        }
+        if (substring.length > length) {
+          length = substring.length;
+        }
+      }
+    }
   return length;
 };

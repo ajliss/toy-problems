@@ -81,6 +81,7 @@ Given "pwwkew", the answer is "wke", with the length of 3. Note that the answer 
  * @param {string} s
  * @return {number}
  */
+// Exponential time or linear space
 const lengthOfLongestSubstring = (s) => {
   if (!s) {
       return 0;

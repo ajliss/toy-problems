@@ -49,3 +49,22 @@ const abs = (arr) => {
   }
   return [minPos, maxPos];
 };
+
+const seq = (arr) => {
+  let minPos = 0;
+  let min = arr[0];
+  let positions = [null, null];
+  let diff = 0;
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] < min) {
+      min = arr[i];
+      minPos = i;
+    } else if (arr[i] - min > diff){
+      diff = arr[i] - min;
+      positions[0] = minPos;
+      positions[1] = i;
+    }
+  }
+  return positions;
+};
+

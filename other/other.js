@@ -68,3 +68,15 @@ const seq = (arr) => {
   return positions;
 };
 
+const adj = (arr) => {
+  let diff = 0;
+  let positions = [0, 0];
+  
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i + 1] - arr[i] > diff) {
+      diff = arr[i + 1] - arr[i];
+      positions = [i, i + 1];
+    }
+  }
+  return positions;
+};
